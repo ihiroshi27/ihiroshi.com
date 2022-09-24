@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+        <title>Perayuth Thanyanon</title>
+        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,400" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
+        <style>
+            html, body {
+                width: 100%;
+                height: 100%;
+            }
+            body {
+                margin: 0px;
+                font-family: 'Libre Franklin', sans-serif;
+                font-size: 16px;
+                line-height: 1;
+                background-color: #ebebeb;
+            }
+            .section {
+                width: 100%;
+                height: 100%;
+            }
+            .wrapper {
+                position: relative;
+                top: 50%;
+                transform: translateY(-50%);
+                text-align: center;
+            }
+            .wrapper > .fullname {
+                color: #383838;
+                font-size: 350%;
+                line-height: 1.2;
+                padding-left: 35px;
+            }
+            .wrapper > .fullname > .firstname {
+                font-weight: 400;
+            }
+            .wrapper > .fullname > .lastname {
+                font-weight: 100;
+            }
+            .wrapper > .fullname > .cursor {
+                font-weight: 100;
+                animation: blink 1.5s infinite;
+                -webkit-animation: blink 1.5s infinite;
+            }
+            .wrapper > .description {
+                color: #E08E79;
+                font-size: 180%;
+            }
+            .wrapper > .link {
+                font-size: 230%;
+                line-height: 2;
+            }
+            .wrapper > .link > a {
+                margin: 5px;
+                color: #4d4d4d;
+                opacity: 0.5;
+                transition: opacity 0.5s;
+            }
+            .wrapper > .link > a:hover {
+                opacity: 1;
+            }
+            
+            @keyframes blink {
+                0% { visibility: hidden; }
+                50% { visibility: hidden; }
+                100% { visibility: visible; }
+            }
+            @-webkit-keyframes blink {
+                0% { visibility: hidden; }
+                50% { visibility: hidden; }
+                100% { visibility: visible; }
+            }
+            
+            @media screen and (min-width: 641px) and (max-width: 1007px) {
+                .wrapper > .fullname {
+                    font-size: 270%;
+                    line-height: 1.2;
+                    padding-left: 10px;
+                }
+                .wrapper > .description { 
+                    font-size: 145%;
+                }
+                .wrapper > .link {
+                    font-size: 250%;
+                }
+            }
+            
+            @media screen and (max-width: 640px) {
+                .wrapper > .fullname {
+                    font-size: 190%;
+                    line-height: 1.5;
+                    padding-left: 10px;
+                }
+                .wrapper > .description { 
+                    font-size: 100%;
+                }
+                .wrapper > .link {
+                    font-size: 250%;
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="section">
+            <div class="wrapper">
+                <div class="fullname"><span class="firstname">PERAYUTH</span>&nbsp;<span class="lastname">THANYANON</span>&nbsp;<span class="cursor">|</span></div>
+                <div class="description">Full Stack Developer</div>
+                <div class="link"><a href="https://www.facebook.com/ihiroshi27" target="_blank"><i class="fab fa-facebook-square"></i></a><a href="https://www.twitter.com/ihiroshi27" target="_blank"><i class="fab fa-twitter-square"></i></a><a href="https://www.linkedin.com/in/ihiroshi27" target="_blank"><i class="fab fa-linkedin"></i></a><a href="https://www.github.com/ihiroshi27" target="_blank"><i class="fab fa-github-square"></i></a></div>
+            </div>
+        </div>
+    </body>
+</html>
