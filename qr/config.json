@@ -11,6 +11,18 @@
       "css": "camera",
       "code": 59392,
       "src": "typicons"
+    },
+    {
+      "uid": "43fl9m553j1z5937vfjz0lgolrlspxwl",
+      "css": "ok",
+      "code": 59393,
+      "src": "typicons"
+    },
+    {
+      "uid": "1dq4tek4k8ea7zlj4kc3w83itnutaxg5",
+      "css": "cancel",
+      "code": 59394,
+      "src": "typicons"
     }
   ]
 }
