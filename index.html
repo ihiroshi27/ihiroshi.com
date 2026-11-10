@@ -1,116 +1,214 @@
-
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, viewport-fit=cover">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
         <title>Perayuth Thanyanon</title>
-        <link href="https://fonts.googleapis.com/css?family=Libre+Franklin:100,400" rel="stylesheet">
+        <meta name="description" content="Perayuth Thanyanon — Full Stack Developer and maker of Stamp for iPhone.">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;400;600&display=swap" rel="stylesheet">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.1/css/all.css" integrity="sha384-gfdkjb5BdAXd+lj+gudLWI+BXq4IuLW5IT+brZEZsLFm++aCMlF1V92rMkPaX4PP" crossorigin="anonymous">
         <style>
-            html, body {
-                width: 100%;
-                height: 100%;
+            :root {
+                --bg: #f2f1ef;
+                --surface: #ffffff;
+                --text: #2b2b2b;
+                --muted: #6f6f6f;
+                --line: rgba(0, 0, 0, 0.08);
+                --accent: #e08e79;
+                --shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.06);
             }
+            @media (prefers-color-scheme: dark) {
+                :root {
+                    --bg: #151515;
+                    --surface: #1f1f1f;
+                    --text: #ececec;
+                    --muted: #9a9a9a;
+                    --line: rgba(255, 255, 255, 0.08);
+                    --accent: #eda08c;
+                    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px rgba(0, 0, 0, 0.35);
+                }
+            }
+
+            * { box-sizing: border-box; }
+            html { -webkit-text-size-adjust: 100%; }
             body {
-                margin: 0px;
-                font-family: 'Libre Franklin', sans-serif;
+                margin: 0;
+                font-family: 'Libre Franklin', -apple-system, BlinkMacSystemFont, sans-serif;
                 font-size: 16px;
-                line-height: 1;
-                background-color: #ebebeb;
+                line-height: 1.5;
+                color: var(--text);
+                background: var(--bg);
             }
-            .section {
-                width: 100%;
-                height: 100%;
+            a { color: inherit; }
+
+            .container {
+                max-width: 760px;
+                margin: 0 auto;
+                padding: 0 24px;
             }
-            .wrapper {
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-                text-align: center;
+
+            /* Hero */
+            .hero {
+                min-height: 72vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                padding: 80px 0 48px;
             }
-            .wrapper > .fullname {
-                color: #383838;
-                font-size: 350%;
+            .hero .hello {
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: var(--accent);
+                margin: 0 0 16px;
+            }
+            .hero h1 {
+                margin: 0;
+                font-size: clamp(40px, 9vw, 76px);
+                line-height: 1.05;
+                letter-spacing: -0.01em;
+                font-weight: 600;
+            }
+            .hero h1 .lastname { font-weight: 200; }
+            .hero h1 .cursor {
+                font-weight: 200;
+                color: var(--accent);
+                animation: blink 1.2s steps(1) infinite;
+            }
+            .hero .role {
+                margin: 20px 0 0;
+                font-size: clamp(18px, 3vw, 22px);
+                font-weight: 200;
+                color: var(--muted);
+            }
+            .social {
+                display: flex;
+                gap: 10px;
+                margin-top: 36px;
+                padding: 0;
+                list-style: none;
+            }
+            .social a {
+                display: grid;
+                place-items: center;
+                width: 44px;
+                height: 44px;
+                border-radius: 12px;
+                border: 1px solid var(--line);
+                background: var(--surface);
+                color: var(--muted);
+                font-size: 18px;
+                text-decoration: none;
+                transition: color 0.2s, transform 0.2s, border-color 0.2s;
+            }
+            .social a:hover {
+                color: var(--text);
+                border-color: var(--accent);
+                transform: translateY(-2px);
+            }
+
+            /* Apps */
+            .section-title {
+                font-size: 14px;
+                font-weight: 600;
+                letter-spacing: 0.18em;
+                text-transform: uppercase;
+                color: var(--muted);
+                margin: 0 0 20px;
+            }
+            .apps { padding-bottom: 80px; }
+            .app-card {
+                display: grid;
+                grid-template-columns: auto 1fr;
+                gap: 24px;
+                align-items: center;
+                padding: 28px;
+                border-radius: 24px;
+                background: var(--surface);
+                border: 1px solid var(--line);
+                box-shadow: var(--shadow);
+            }
+            .app-icon {
+                width: 112px;
+                height: 112px;
+                border-radius: 25px;
+                display: block;
+                box-shadow: 0 6px 18px rgba(107, 40, 217, 0.28);
+            }
+            .app-card h3 {
+                margin: 0;
+                font-size: 24px;
+                font-weight: 600;
                 line-height: 1.2;
-                padding-left: 35px;
             }
-            .wrapper > .fullname > .firstname {
+            .app-card .subtitle {
+                margin: 4px 0 0;
+                font-size: 14px;
+                color: #6b28d9;
+                font-weight: 600;
+            }
+            @media (prefers-color-scheme: dark) {
+                .app-card .subtitle { color: #a98af0; }
+            }
+            .app-card .detail {
+                margin: 12px 0 18px;
+                color: var(--muted);
                 font-weight: 400;
             }
-            .wrapper > .fullname > .lastname {
-                font-weight: 100;
+            .app-card .badge { display: inline-block; }
+            .app-card .badge img {
+                height: 44px;
+                display: block;
+                transition: opacity 0.2s;
             }
-            .wrapper > .fullname > .cursor {
-                font-weight: 100;
-                animation: blink 1.5s infinite;
-                -webkit-animation: blink 1.5s infinite;
+            .app-card .badge:hover img { opacity: 0.8; }
+
+            @keyframes blink { 50% { opacity: 0; } }
+            @media (prefers-reduced-motion: reduce) {
+                .hero h1 .cursor { animation: none; }
             }
-            .wrapper > .description {
-                color: #E08E79;
-                font-size: 180%;
-            }
-            .wrapper > .link {
-                font-size: 230%;
-                line-height: 2;
-            }
-            .wrapper > .link > a {
-                margin: 5px;
-                color: #4d4d4d;
-                opacity: 0.5;
-                transition: opacity 0.5s;
-            }
-            .wrapper > .link > a:hover {
-                opacity: 1;
-            }
-            
-            @keyframes blink {
-                0% { visibility: hidden; }
-                50% { visibility: hidden; }
-                100% { visibility: visible; }
-            }
-            @-webkit-keyframes blink {
-                0% { visibility: hidden; }
-                50% { visibility: hidden; }
-                100% { visibility: visible; }
-            }
-            
-            @media screen and (min-width: 641px) and (max-width: 1007px) {
-                .wrapper > .fullname {
-                    font-size: 270%;
-                    line-height: 1.2;
-                    padding-left: 10px;
+
+            @media (max-width: 560px) {
+                .container { padding: 0 20px; }
+                .hero { min-height: 64vh; padding-top: 64px; }
+                .app-card {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                    justify-items: center;
+                    padding: 28px 20px;
                 }
-                .wrapper > .description { 
-                    font-size: 145%;
-                }
-                .wrapper > .link {
-                    font-size: 250%;
-                }
-            }
-            
-            @media screen and (max-width: 640px) {
-                .wrapper > .fullname {
-                    font-size: 190%;
-                    line-height: 1.5;
-                    padding-left: 10px;
-                }
-                .wrapper > .description { 
-                    font-size: 100%;
-                }
-                .wrapper > .link {
-                    font-size: 250%;
-                }
+                .app-icon { width: 96px; height: 96px; border-radius: 22px; }
             }
         </style>
     </head>
     <body>
-        <div class="section">
-            <div class="wrapper">
-                <div class="fullname"><span class="firstname">PERAYUTH</span>&nbsp;<span class="lastname">THANYANON</span>&nbsp;<span class="cursor">|</span></div>
-                <div class="description">Full Stack Developer</div>
-                <div class="link"><a href="https://www.facebook.com/ihiroshi27" target="_blank"><i class="fab fa-facebook-square"></i></a><a href="https://www.twitter.com/ihiroshi27" target="_blank"><i class="fab fa-twitter-square"></i></a><a href="https://www.linkedin.com/in/ihiroshi27" target="_blank"><i class="fab fa-linkedin"></i></a><a href="https://www.github.com/ihiroshi27" target="_blank"><i class="fab fa-github-square"></i></a></div>
-            </div>
-        </div>
+        <main class="container">
+            <section class="hero">
+                <p class="hello">Hello, I'm</p>
+                <h1><span class="firstname">PERAYUTH</span> <span class="lastname">THANYANON</span><span class="cursor">|</span></h1>
+                <p class="role">Full Stack Developer</p>
+                <ul class="social">
+                    <li><a href="https://www.github.com/ihiroshi27" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a></li>
+                    <li><a href="https://www.linkedin.com/in/ihiroshi27" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a></li>
+                    <li><a href="https://www.facebook.com/ihiroshi27" target="_blank" rel="noopener" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></li>
+                    <li><a href="https://www.twitter.com/ihiroshi27" target="_blank" rel="noopener" aria-label="Twitter"><i class="fab fa-twitter"></i></a></li>
+                </ul>
+            </section>
+
+            <section class="apps">
+                <h2 class="section-title">My Apps</h2>
+                <article class="app-card">
+                    <img class="app-icon" src="images/stamp-icon.png" alt="Stamp app icon" width="112" height="112">
+                    <div>
+                        <h3>Stamp</h3>
+                        <p class="subtitle">Trips, Visas &amp; Travel Goals</p>
+                        <p class="detail">Keep every trip, flight, train and stay in one place.</p>
+                        <a class="badge" href="https://apps.apple.com/app/id6821687421" target="_blank" rel="noopener"><img src="images/app-store-badge.svg" alt="Download Stamp on the App Store"></a>
+                    </div>
+                </article>
+            </section>
+        </main>
     </body>
 </html>
