@@ -163,6 +163,25 @@
                 transition: opacity 0.2s;
             }
             .app-card .badge:hover img { opacity: 0.8; }
+            .app-card h3 a { text-decoration: none; }
+            .app-card h3 a:hover { color: #6b28d9; }
+            .app-actions {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 12px 20px;
+            }
+            .site-link {
+                font-size: 14px;
+                font-weight: 600;
+                color: #6b28d9;
+                text-decoration: none;
+            }
+            .site-link i { font-size: 11px; margin-left: 4px; transition: transform 0.2s; }
+            .site-link:hover i { transform: translateX(3px); }
+            @media (prefers-color-scheme: dark) {
+                .site-link, .app-card h3 a:hover { color: #a98af0; }
+            }
 
             @keyframes blink { 50% { opacity: 0; } }
             @media (prefers-reduced-motion: reduce) {
@@ -178,6 +197,7 @@
                     justify-items: center;
                     padding: 28px 20px;
                 }
+                .app-actions { justify-content: center; }
                 .app-icon { width: 96px; height: 96px; border-radius: 22px; }
             }
         </style>
@@ -199,12 +219,15 @@
             <section class="apps">
                 <h2 class="section-title">My Apps</h2>
                 <article class="app-card">
-                    <img class="app-icon" src="images/stamp-icon.png" alt="Stamp app icon" width="112" height="112">
+                    <a href="https://stamp.ihiroshi.com" target="_blank" rel="noopener"><img class="app-icon" src="images/stamp-icon.png" alt="Stamp app icon" width="112" height="112"></a>
                     <div>
-                        <h3>Stamp</h3>
+                        <h3><a href="https://stamp.ihiroshi.com" target="_blank" rel="noopener">Stamp</a></h3>
                         <p class="subtitle">Trips, Visas &amp; Travel Goals</p>
                         <p class="detail">Keep every trip, flight, train and stay in one place.</p>
-                        <a class="badge" href="https://apps.apple.com/app/id6821687421" target="_blank" rel="noopener"><img src="images/app-store-badge.svg" alt="Download Stamp on the App Store"></a>
+                        <div class="app-actions">
+                            <a class="badge" href="https://apps.apple.com/app/id6821687421" target="_blank" rel="noopener"><img src="images/app-store-badge.svg" alt="Download Stamp on the App Store"></a>
+                            <a class="site-link" href="https://stamp.ihiroshi.com" target="_blank" rel="noopener">stamp.ihiroshi.com <i class="fas fa-arrow-right"></i></a>
+                        </div>
                     </div>
                 </article>
             </section>
